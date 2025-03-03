@@ -1,0 +1,20 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+requires-python = ">=3.10"
+name = "ml_customer_churn
+"
+readme = "README.md"
+dynamic = ["dependencies"]
+
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}
+
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false
