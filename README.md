@@ -1,1 +1,2 @@
-# mlops_customer_churn
+# churn-mlops
+End-to-End Machine Learning Pipeline
