@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 from sklearn.model_selection import train_test_split
 import logging
 from src.core.oi import ArtifactStore
@@ -13,14 +12,13 @@ logging.basicConfig(
 
 
 class DataIngestion:
-    """Handles data ingestion process"""
 
     def __init__(self, config):
         self.config = config
         self.artifact_store = ArtifactStore(config)
 
     def data_ingestion(self, path):
-        """split the input data"""
+
         # Check if artifacts
 
         raw_path = self.config.get("folder_path", {}).get("raw_path", {})
@@ -33,7 +31,7 @@ class DataIngestion:
         test_data = self.artifact_store.load_artifact(raw_path, raw_test_filename)
 
         if train_data is not None and test_data is not None:
-            logging.info("Loaded raw artifacts from store. Skipping data ingestion.")
+            logging.info("Loaded artifacts. Skipping data ingestion.")
             return train_data, test_data
         
         try:
@@ -46,10 +44,6 @@ class DataIngestion:
             logging.info(
                 f"Data split complete. Train shape: {train_data.shape}, Test shape: {test_data.shape}"
             )
-
-            # raw_path = self.config.get("folder_path", {}).get("raw_path", {})
-            # train_filename = self.config.get("folder_path", {}).get("train", {})
-            # test_filename = self.config.get("folder_path", {}).get("test", {})
 
             # Save raw artifacts
             self.artifact_store.save_artifact(

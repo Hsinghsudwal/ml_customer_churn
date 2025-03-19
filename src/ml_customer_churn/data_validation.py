@@ -13,7 +13,6 @@ logging.basicConfig(
 
 
 class DataValidation:
-    """Handles data validation and artifact storage."""
 
     def __init__(self, config):
         self.config = config
@@ -30,7 +29,7 @@ class DataValidation:
 
         if val_train_data is not None and val_test_data is not None:
             logging.info(
-                "Loaded validation artifacts from store. Skipping data validation."
+                "Loaded artifacts. Skipping data validation."
             )
             return val_train_data, val_test_data
 
