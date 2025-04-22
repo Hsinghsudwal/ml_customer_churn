@@ -1,0 +1,25 @@
+pandas
+numpy
+matplotlib
+seaborn
+scipy
+scikit-learn
+pyYAML
+xgboost
+catboost
+lightgbm
+joblib
+
+
+mlflow
+dvc
+pyYAML
+
+Flask
+
+
+# dev
+flake8
+black
+
+

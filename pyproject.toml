@@ -1,20 +1,73 @@
 [build-system]
-requires = [ "setuptools",]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
-
 [project]
-requires-python = ">=3.10"
-name = "ml_customer_churn
-"
+name = "ml_customer_churn"
+version = "0.1.0"
+description = "End to End Machine Learning Pipeline with MLOps Tools"
+authors = [{ name = "Hsinghsudwal" }]
 readme = "README.md"
+keywords = ["mlops", "python", "package"]
+requires-python = ">=3.11"
 dynamic = ["dependencies"]
-
 
 [tool.setuptools.dynamic]
 dependencies = {file = "requirements.txt"}
 
-
 [tool.setuptools.packages.find]
-where = [ "src",]
+where = ["src"]
 namespaces = false
+
+[project.scripts]
+ml_customer_churn = "run:main"
+
+[tool.uv]
+default-groups = ["check", "commit", "dev", "doc", "notebook"]
+
+[tool.bandit]
+targets = ["src"]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "v$version"
+version_scheme = "pep440"
+version_provider = "pep621"
+update_changelog_on_bump = true
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+omit = ["__main__.py"]
+
+[tool.mypy]
+pretty = true
+python_version = "3.11"
+check_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "--verbosity=2"
+pythonpath = ["src"]
+
+[tool.ruff]
+fix = true
+indent-width = 4
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["D100", "D103"]
+
+[project.urls]
+Homepage = "https://github.com/Hsinghsudwal/ml_customer_churn"
+Documentation = "https://Hsinghsudwal.github.io/ml_customer_churn/"
+Repository = "https://github.com/Hsinghsudwal/ml_customer_churn"
+"Bug Tracker" = "https://github.com/Hsinghsudwal/ml_customer_churn/issues"
+Changelog = "https://github.com/Hsinghsudwal/ml_customer_churn/blob/main/CHANGELOG.md"
