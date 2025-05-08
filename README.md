@@ -10,6 +10,7 @@ A complete machine learning pipeline for predicting customer churn using ensembl
 - [Pipeline Components](#pipeline-components)
 - [Experiment Tracking](#experiment-tracking)
 - [Model Performance](#model-performance)
+- [Deployment](#deployment)
 - [Next Steps](#next-steps)
 - [Docker Integration](#docker-integration)
 
@@ -147,7 +148,7 @@ To deploy the model:
 1. **Model Serving**:
    - Export the model using the provided script:
      ```bash
-     python src/deployment/export_model.py
+     python src/deployment/app.py
      ```
    - Deploy as a REST API using Flask
 
