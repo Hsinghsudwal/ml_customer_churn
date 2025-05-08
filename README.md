@@ -1,4 +1,4 @@
-# Customer Churn Prediction Pipeline
+# ML Customer Churn Prediction Pipeline
 
 A complete machine learning pipeline for predicting customer churn using ensemble methods.
 
@@ -34,7 +34,7 @@ The goal is to build a robust, end-to-end Machine Learning pipeline that predict
 
 ```bash
 # Clone the repository
-git clone https://github.com/Hsinghsudwal/customer-churn-prediction.git
+git clone https://github.com/Hsinghsudwal/ml_customer_churn.git
 cd customer-churn-prediction
 
 # Create a virtual environment
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 ## Project Setup
 
 1. Ensure your data file is in the proper location:
-   - Training data should be placed in `data/churn-train.csv`
+   - Training data should be placed in `data/train.csv`
 
 2. Configure pipeline parameters in `config.yaml` (if applicable)
 
