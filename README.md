@@ -48,7 +48,7 @@ pip install -r requirements.txt
 ## Project Setup
 
 1. Ensure your data file is in the proper location:
-   - Training data should be placed in `data/train.csv`
+   - Training data should be placed in `data/churn-train.csv`
 
 2. Configure pipeline parameters in `config.yaml` (if applicable)
 
