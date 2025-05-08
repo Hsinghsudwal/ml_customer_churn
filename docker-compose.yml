@@ -1,0 +1,32 @@
+# https://docs.docker.com/compose/compose-file/
+
+version: '3.8'
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow
+    container_name: mlflow_server
+    ports:
+      - "5000:5000"
+    environment:
+      - MLFLOW_TRACKING_URI=http://0.0.0.0:5000
+    volumes:
+      - ./mlflow_data:/mlflow
+
+  flask-api:
+    build: ./
+    ports:
+      - "5001:5000" # Changed host port to avoid conflict with MLflow UI
+    networks:
+      - mlops-net
+    depends_on:
+      - mlflow-ui # Or any service that manages your artifacts
+    volumes:
+      - ./config:/app/config # Mount your config directory
+      - ./artifacts:/app/artifacts # Mount a volume for artifacts (if using local storage)
+    environment:
+      PYTHONPATH: /app
+    command: python deploy.py
+
+networks:
+  mlops-net:
+    driver: bridge

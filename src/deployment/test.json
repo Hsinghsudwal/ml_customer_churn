@@ -1,0 +1,16 @@
+[
+    {
+    //   "CustomerID": "C1234",
+      "Age": 32,
+      "Gender": "Female",
+      "Tenure": 12,
+      "Usage Frequency": 5,
+      "Support Calls": 1,
+      "Payment Delay": 0,
+      "Subscription Type": "Premium",
+      "Contract Length": 12,
+      "Total Spend": 560.75,
+      "Last Interaction": 3
+    }
+  ]
+  

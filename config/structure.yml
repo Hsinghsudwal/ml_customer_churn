@@ -1,0 +1,40 @@
+# localstack.yml (For LocalStack)
+s3:
+  endpoint: "http://localhost:4566"
+  bucket_name: "artifact-bucket"
+dynamodb:
+  endpoint: "http://localhost:4566"
+  table_name: "metadata"
+sqs:
+  endpoint: "http://localhost:4566"
+  queue_name: "artifact-queue"
+lambda:
+  endpoint: "http://localhost:4566"
+  function_name: "process_artifacts"
+  
+# local.yml (For Local File Storage)
+artifact_path: "artifacts"
+metadata_path: "metadata.json"
+
+# cloud.yml (For AWS Cloud)
+s3:
+  region: "us-east-1"
+  bucket_name: "artifact-bucket"
+dynamodb:
+  region: "us-east-1"
+  table_name: "metadata"
+sqs:
+  region: "us-east-1"
+  queue_name: "artifact-queue"
+lambda:
+  region: "us-east-1"
+  function_name: "process_artifacts"
+
+
+artifact_path:
+  local: "outputs_store"  # Base directory for local storage
+  cloud:
+    s3_bucket_name: "ml-customer-churn"  # S3 bucket for cloud storage
+  localstack:
+    s3_bucket_name: "ml-customer-churn-local"
+    endpoint_url: "http://localhost:4566"

@@ -1,0 +1,4 @@
+localstack:
+  endpoint_url: "http://localhost:4566"
+  s3_bucket: "mlops-artifacts"
+  region: "us-east-1"

@@ -9,12 +9,11 @@ xgboost
 catboost
 lightgbm
 joblib
-
-
+evidently
+boto3
 mlflow
 dvc
 pyYAML
-
 Flask
 
 

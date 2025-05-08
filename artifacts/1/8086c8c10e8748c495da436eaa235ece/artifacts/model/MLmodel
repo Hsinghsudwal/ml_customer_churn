@@ -1,0 +1,40 @@
+artifact_path: model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.0
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+is_signature_from_type_hint: false
+mlflow_version: 2.20.3
+model_size_bytes: 78437156
+model_uuid: f28860e283f5417888256fc15ed2a591
+run_id: 8086c8c10e8748c495da436eaa235ece
+signature:
+  inputs: '[{"type": "double", "name": "Age", "required": true}, {"type": "double",
+    "name": "Tenure", "required": true}, {"type": "double", "name": "Usage Frequency",
+    "required": true}, {"type": "double", "name": "Support Calls", "required": true},
+    {"type": "double", "name": "Payment Delay", "required": true}, {"type": "double",
+    "name": "Total Spend", "required": true}, {"type": "double", "name": "Last Interaction",
+    "required": true}, {"type": "double", "name": "Gender_Female", "required": true},
+    {"type": "double", "name": "Gender_Male", "required": true}, {"type": "double",
+    "name": "Gender_missing", "required": true}, {"type": "double", "name": "Subscription
+    Type_Basic", "required": true}, {"type": "double", "name": "Subscription Type_Premium",
+    "required": true}, {"type": "double", "name": "Subscription Type_Standard", "required":
+    true}, {"type": "double", "name": "Subscription Type_missing", "required": true},
+    {"type": "double", "name": "Contract Length_Annual", "required": true}, {"type":
+    "double", "name": "Contract Length_Monthly", "required": true}, {"type": "double",
+    "name": "Contract Length_Quarterly", "required": true}, {"type": "double", "name":
+    "Contract Length_missing", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-05-08 18:30:12.488626'

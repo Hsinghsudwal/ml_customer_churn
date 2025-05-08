@@ -1,0 +1,78 @@
+project_name: "Customer Churn"
+author: "Harinder Singh Sudwal"
+
+base:
+  test_size: 0.2
+
+storage_type: "local"  # Options: "local", "cloud", "localstack"
+
+artifact_path:
+  local: "outputs_store"  # Base directory
+
+# data_raw
+  raw_path: "raw"
+  train: "train.csv"
+  test: "test.csv"
+
+# data_validate:
+  validate_path: "validate"
+  train_val: "vali_train.csv"
+  test_val: "vali_test.csv"
+
+# data_transformer:
+  transform_path: "transformer"
+  transformer: "transformer.pkl"
+  xtrain: "xtrain.csv"
+  xtest: "xtest.csv"
+  ytrain: "ytrain.csv"
+  ytest: "ytest.csv"
+
+# model:
+  model_path: "model"
+  saved_model: "best_model.pkl"
+
+# evaluation:
+  evaluate: "evaluate"
+  metrics_json: "evaluation_metrics.json"
+
+# mlflow
+mlflow_config:
+  mlflow_tracking_uri: "http://127.0.0.1:5000"
+  experiment_name: churn_prediction
+  artifact_location: "s3://your-mlflow-artifact-bucket/"
+  # best_model_name: random_forest
+#   registered_model_name: random_forest
+  # remote_server_uri: https://dagshub.com/deasadiqbal/churn-mlops.mlflow
+  
+
+
+
+
+
+# mlflow.set_tracking_uri("http://your-mlflow-server")
+# mlflow.set_experiment("your_experiment_name")
+
+# Set artifact storage to S3
+# mlflow.set_registry_uri("s3://your-mlflow-artifact-bucket/")
+
+# model:
+#   deployment_path: "deployment"
+  
+# model_monitor:
+#   monitor_path: "monitoring"
+#   drift_threshold: 0.03  # 3% accuracy drift
+#   dashboard_path: "reports/dashboard.html"
+
+# retraining:
+#   schedule: "weekly"
+#   trigger: "drift"
+
+
+# model_monitor:
+#   target_col_name: target
+#   dashboard_path: reports\data_drift_dashboard.html
+  
+# AWS credentials (for cloud storage)
+# aws_access_key_id: "your-access-key"
+# aws_secret_access_key: "your-secret-key"
+# aws_region: "us-east-1"
